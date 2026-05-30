@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Project artifacts
+out/
+var/
+
+# Factorio
+*.zip
+saves/
+!blueprints/*.txt
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Ephemeral plans (per global discipline: docs/plans/ is gitignored)
+docs/plans/
