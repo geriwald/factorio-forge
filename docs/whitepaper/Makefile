@@ -20,7 +20,7 @@ PDFLATEXOPTS  := -interaction=nonstopmode -halt-on-error -file-line-error \
 
 .PHONY: all clean distclean watch wordcount help
 
-all: $(PDF)
+all: $(MAIN).pdf
 
 $(BUILDDIR):
 	mkdir -p $(BUILDDIR)
@@ -38,6 +38,11 @@ else
 	$(PDFLATEX) $(PDFLATEXOPTS) $(MAIN).tex
 	$(PDFLATEX) $(PDFLATEXOPTS) $(MAIN).tex
 endif
+
+# Readable copy of the PDF next to the sources (versioned), refreshed
+# whenever the build PDF changes.
+$(MAIN).pdf: $(PDF)
+	cp $(PDF) $(MAIN).pdf
 
 watch:
 ifneq ($(LATEXMK),)
@@ -59,11 +64,11 @@ clean:
 	      $(BUILDDIR)/$(MAIN).fdb_latexmk
 
 distclean: clean
-	rm -f $(PDF)
+	rm -f $(PDF) $(MAIN).pdf
 
 help:
 	@echo "Targets:"
-	@echo "  make            build $(PDF)"
+	@echo "  make            build $(PDF) + copy to ./$(MAIN).pdf"
 	@echo "  make watch      continuous rebuild (requires latexmk)"
 	@echo "  make wordcount  texcount word count"
 	@echo "  make clean      remove auxiliary files"
