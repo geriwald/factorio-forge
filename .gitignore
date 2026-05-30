@@ -29,3 +29,6 @@ saves/
 
 # Ephemeral plans (per global discipline: docs/plans/ is gitignored)
 docs/plans/
+
+# Built PDF copy dropped next to the whitepaper sources (regenerable via make)
+docs/whitepaper/whitepaper.pdf
