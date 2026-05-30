@@ -1,14 +1,14 @@
 # =====================================================================
 #  Makefile for the Factorio Forge whitepaper.
 #
-#  Builds whitepaper.pdf into the project-level build/ directory
-#  (../../build, gitignored). latexmk is preferred; if it is not
-#  installed, a manual pdflatex + bibtex fallback is used.
+#  Builds whitepaper.pdf into a local build/ directory next to the
+#  sources (docs/whitepaper/build/, gitignored). latexmk is preferred;
+#  if it is not installed, a manual pdflatex + bibtex fallback is used.
 # =====================================================================
 
 MAIN       := whitepaper
 BIB        := references
-BUILDDIR   := ../../build
+BUILDDIR   := build
 PDF        := $(BUILDDIR)/$(MAIN).pdf
 
 # Detect latexmk; fall back to manual passes when absent.
