@@ -1,0 +1,5 @@
+{
+  "name": "phase0-throughput",
+  "order": "a",
+  "description": "Phase 0 evaluator: player-less headless blueprint materialization and throughput measurement."
+}

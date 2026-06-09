@@ -22,6 +22,13 @@ var/
 saves/
 !blueprints/*.txt
 
+# Factorio isolated write-data dir: everything is generated/runtime (config,
+# server-settings, logs, caches, saves, script-output, per-run params.lua) EXCEPT
+# the scenario source, which is the Phase 0 evaluator's heart and is versioned.
+factorio_data/*
+!factorio_data/scenarios/
+factorio_data/scenarios/*/params.lua
+
 # Editors / OS
 .vscode/
 .idea/
